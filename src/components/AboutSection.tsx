@@ -4,29 +4,30 @@ import { MapPin, Calendar, Briefcase } from 'lucide-react'
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 section-3d">
+      <div className="parallax-bg" />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-3d floating-3d">
             About Me
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-3d">
             Passionate about creating intelligent solutions that make a difference
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Profile Image Placeholder */}
+          {/* Profile Image Placeholder with 3D effects */}
           <div className="flex justify-center lg:justify-start">
-            <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center border border-border">
-              <div className="text-6xl font-bold text-primary/50">US</div>
+            <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center border border-border card-3d glass-morphism">
+              <div className="text-6xl font-bold text-primary/50 text-3d">US</div>
             </div>
           </div>
 
           {/* About Content */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">
+              <h3 className="text-2xl font-semibold text-foreground mb-4 text-3d">
                 Hello! I'm Ujjwal Srivastava
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -41,16 +42,16 @@ const AboutSection = () => {
               </p>
             </div>
 
-            {/* Current Role */}
-            <Card className="bg-card border border-border">
+            {/* Current Role with 3D effects */}
+            <Card className="card-3d glass-morphism border border-border/50">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="p-2 bg-primary/10 rounded-lg">
+                  <div className="p-2 bg-primary/10 rounded-lg glass-morphism">
                     <Briefcase className="h-6 w-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold text-foreground mb-1">Current Role</h4>
-                    <p className="text-primary font-medium">Technical Consulting Writer @ Atlan</p>
+                    <h4 className="font-semibold text-foreground mb-1 text-3d">Current Role</h4>
+                    <p className="text-primary font-medium text-3d">Technical Consulting Writer @ Atlan</p>
                     <div className="flex items-center text-sm text-muted-foreground mt-2">
                       <Calendar className="h-4 w-4 mr-1" />
                       Dec 2024 – Mar 2025
@@ -63,21 +64,21 @@ const AboutSection = () => {
               </CardContent>
             </Card>
 
-            {/* Location & Education */}
+            {/* Location & Education with 3D effects */}
             <div className="flex flex-wrap gap-4">
-              <Badge variant="secondary" className="flex items-center space-x-2 px-3 py-2">
+              <Badge variant="secondary" className="flex items-center space-x-2 px-3 py-2 achievement-badge-3d glass-morphism">
                 <MapPin className="h-4 w-4" />
                 <span>Greater Noida, India</span>
               </Badge>
-              <Badge variant="secondary" className="flex items-center space-x-2 px-3 py-2">
+              <Badge variant="secondary" className="flex items-center space-x-2 px-3 py-2 achievement-badge-3d glass-morphism">
                 <Calendar className="h-4 w-4" />
                 <span>Final Year Student</span>
               </Badge>
             </div>
 
-            {/* Key Interests */}
+            {/* Key Interests with 3D effects */}
             <div>
-              <h4 className="font-semibold text-foreground mb-3">Key Interests</h4>
+              <h4 className="font-semibold text-foreground mb-3 text-3d">Key Interests</h4>
               <div className="flex flex-wrap gap-2">
                 {[
                   'AI Systems',
@@ -87,7 +88,7 @@ const AboutSection = () => {
                   'Full-Stack Development',
                   'Competitive Programming'
                 ].map((interest) => (
-                  <Badge key={interest} variant="outline" className="text-sm">
+                  <Badge key={interest} variant="outline" className="text-sm skill-card-3d glass-morphism">
                     {interest}
                   </Badge>
                 ))}

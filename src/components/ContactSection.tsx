@@ -39,13 +39,14 @@ const ContactSection = () => {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/20 section-3d">
+      <div className="parallax-bg" />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-3d floating-3d">
             Let's Connect
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-3d">
             I'm always open to discussing new opportunities, collaborations, or just having a chat about technology
           </p>
         </div>
@@ -54,7 +55,7 @@ const ContactSection = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-6">
+              <h3 className="text-2xl font-semibold text-foreground mb-6 text-3d">
                 Get in Touch
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-8">
@@ -63,21 +64,21 @@ const ContactSection = () => {
               </p>
             </div>
 
-            {/* Contact Cards */}
+            {/* Contact Cards with 3D effects */}
             <div className="grid sm:grid-cols-2 gap-4">
               {contactInfo.map((contact) => (
                 <Card 
                   key={contact.label} 
-                  className="bg-card border border-border hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                  className="card-3d glass-morphism border border-border/50 cursor-pointer group"
                   onClick={() => handleContactClick(contact.href)}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
-                      <div className={`p-3 rounded-lg bg-muted group-hover:scale-110 transition-transform duration-300 ${contact.color}`}>
+                      <div className={`p-3 rounded-lg bg-muted/50 glass-morphism group-hover:scale-110 transition-transform duration-300 ${contact.color}`}>
                         {contact.icon}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                        <div className="font-semibold text-foreground group-hover:text-primary transition-colors text-3d">
                           {contact.label}
                         </div>
                         <div className="text-sm text-muted-foreground truncate">
@@ -90,15 +91,15 @@ const ContactSection = () => {
               ))}
             </div>
 
-            {/* Location */}
-            <Card className="bg-card border border-border">
+            {/* Location with 3D effects */}
+            <Card className="card-3d glass-morphism border border-border/50">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-4">
-                  <div className="p-3 rounded-lg bg-muted text-orange-500">
+                  <div className="p-3 rounded-lg bg-muted/50 glass-morphism text-orange-500">
                     <MapPin className="h-6 w-6" />
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground">Location</div>
+                    <div className="font-semibold text-foreground text-3d">Location</div>
                     <div className="text-sm text-muted-foreground">Greater Noida, Uttar Pradesh, India</div>
                   </div>
                 </div>
@@ -106,15 +107,15 @@ const ContactSection = () => {
             </Card>
           </div>
 
-          {/* Call to Action */}
+          {/* Call to Action with 3D effects */}
           <div className="space-y-8">
-            <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20">
+            <Card className="card-3d glass-morphism bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-primary/20 glass-morphism rounded-full flex items-center justify-center mx-auto mb-6 floating-3d">
                   <Send className="h-8 w-8 text-primary" />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-foreground mb-4">
+                <h3 className="text-2xl font-bold text-foreground mb-4 text-3d">
                   Ready to Collaborate?
                 </h3>
                 
@@ -126,7 +127,7 @@ const ContactSection = () => {
                 <div className="space-y-4">
                   <Button 
                     size="lg" 
-                    className="w-full bg-primary hover:bg-primary/90"
+                    className="w-full bg-primary hover:bg-primary/90 button-3d"
                     onClick={() => window.open('mailto:ujjwallsrivastavaa@gmail.com', '_blank')}
                   >
                     <Mail className="mr-2 h-5 w-5" />
@@ -136,7 +137,7 @@ const ContactSection = () => {
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="w-full"
+                    className="w-full button-3d glass-morphism"
                     onClick={() => window.open('https://linkedin.com/in/ujjwal-srivastava', '_blank')}
                   >
                     <Linkedin className="mr-2 h-5 w-5" />
@@ -146,10 +147,10 @@ const ContactSection = () => {
               </CardContent>
             </Card>
 
-            {/* Quick Stats */}
-            <Card className="bg-card border border-border">
+            {/* Quick Stats with 3D effects */}
+            <Card className="card-3d glass-morphism border border-border/50">
               <CardContent className="p-6">
-                <h4 className="font-semibold text-foreground mb-4">Quick Facts</h4>
+                <h4 className="font-semibold text-foreground mb-4 text-3d">Quick Facts</h4>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Status:</span>
@@ -173,9 +174,9 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="text-center mt-16 pt-8 border-t border-border">
-          <p className="text-muted-foreground">
+        {/* Footer with 3D effects */}
+        <div className="text-center mt-16 pt-8 border-t border-border/50">
+          <p className="text-muted-foreground text-3d">
             © 2024 Ujjwal Srivastava. Built with React, TypeScript, and Tailwind CSS.
           </p>
         </div>

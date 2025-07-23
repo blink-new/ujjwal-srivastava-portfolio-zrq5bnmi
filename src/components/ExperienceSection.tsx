@@ -40,20 +40,21 @@ const ExperienceSection = () => {
   ]
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 section-3d">
+      <div className="parallax-bg" />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-3d floating-3d">
             Experience Timeline
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-3d">
             My journey through internships, competitions, and professional growth
           </p>
         </div>
 
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-border"></div>
+          {/* Timeline Line with 3D effect */}
+          <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary opacity-70"></div>
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -63,30 +64,30 @@ const ExperienceSection = () => {
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
-                {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-background border-4 border-primary flex items-center justify-center z-10">
-                  <div className={`w-3 h-3 rounded-full ${exp.color}`}></div>
+                {/* Timeline Dot with 3D effect */}
+                <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-background border-4 border-primary flex items-center justify-center z-10 glass-morphism floating-3d">
+                  <div className={`w-3 h-3 rounded-full ${exp.color} shadow-lg`}></div>
                 </div>
 
-                {/* Content Card */}
+                {/* Content Card with 3D effects */}
                 <div className={`ml-16 md:ml-0 md:w-1/2 ${
                   index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
                 }`}>
-                  <Card className="bg-card border border-border hover:shadow-lg transition-all duration-300 group">
+                  <Card className="experience-card-3d glass-morphism border border-border/50 group">
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center space-x-3">
-                          <div className={`p-2 rounded-lg ${exp.color} text-white`}>
+                          <div className={`p-2 rounded-lg ${exp.color} text-white glass-morphism`}>
                             {exp.icon}
                           </div>
                           <div>
-                            <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                            <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors text-3d">
                               {exp.title}
                             </h3>
-                            <p className="text-primary font-medium">{exp.company}</p>
+                            <p className="text-primary font-medium text-3d">{exp.company}</p>
                           </div>
                         </div>
-                        <Badge variant="outline" className="text-xs">
+                        <Badge variant="outline" className="text-xs achievement-badge-3d glass-morphism">
                           {exp.type}
                         </Badge>
                       </div>
@@ -108,7 +109,7 @@ const ExperienceSection = () => {
 
                       <div className="flex flex-wrap gap-2">
                         {exp.skills.map((skill) => (
-                          <Badge key={skill} variant="secondary" className="text-xs">
+                          <Badge key={skill} variant="secondary" className="text-xs skill-card-3d glass-morphism">
                             {skill}
                           </Badge>
                         ))}

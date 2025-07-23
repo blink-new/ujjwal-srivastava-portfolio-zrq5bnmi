@@ -44,12 +44,12 @@ function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      {/* Navigation with 3D effects */}
+      <nav className="fixed top-0 left-0 right-0 z-50 nav-3d">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <span className="text-xl font-bold text-primary">Ujjwal</span>
+              <span className="text-xl font-bold text-primary text-3d">Ujjwal</span>
             </div>
             
             {/* Desktop Navigation */}
@@ -59,7 +59,7 @@ function App() {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-muted-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                    className="text-muted-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors button-3d glass-morphism"
                   >
                     {item.label}
                   </button>
@@ -72,7 +72,7 @@ function App() {
                 variant="ghost"
                 size="icon"
                 onClick={toggleTheme}
-                className="text-muted-foreground hover:text-primary"
+                className="text-muted-foreground hover:text-primary button-3d glass-morphism"
               >
                 {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </Button>
@@ -83,7 +83,7 @@ function App() {
                   variant="ghost"
                   size="icon"
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-muted-foreground hover:text-primary button-3d glass-morphism"
                 >
                   {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                 </Button>
@@ -92,15 +92,15 @@ function App() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation with 3D effects */}
         {isMobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-b border-border">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 glass-morphism border-b border-border/50">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors"
+                  className="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors button-3d glass-morphism"
                 >
                   {item.label}
                 </button>

@@ -44,35 +44,36 @@ const ProjectsSection = () => {
   ]
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/20 section-3d">
+      <div className="parallax-bg" />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-3d floating-3d">
             Featured Projects
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-3d">
             Innovative solutions combining AI, full-stack development, and cutting-edge technologies
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          {/* Featured Projects */}
+          {/* Featured Projects with 3D effects */}
           {projects.filter(project => project.featured).map((project, index) => (
             <Card 
               key={project.title} 
-              className="bg-card border border-border hover:shadow-xl transition-all duration-300 group overflow-hidden"
+              className="project-card-3d glass-morphism border border-border/50 group overflow-hidden"
             >
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className={`p-3 rounded-lg ${project.color} text-white group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`p-3 rounded-lg ${project.color} text-white group-hover:scale-110 transition-transform duration-300 glass-morphism`}>
                       {project.icon}
                     </div>
                     <div>
-                      <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">
+                      <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors text-3d">
                         {project.title}
                       </CardTitle>
-                      <Badge variant="secondary" className="mt-1 text-xs">
+                      <Badge variant="secondary" className="mt-1 text-xs achievement-badge-3d glass-morphism">
                         {project.stats}
                       </Badge>
                     </div>
@@ -87,12 +88,12 @@ const ProjectsSection = () => {
                 
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.slice(0, 4).map((tech) => (
-                    <Badge key={tech} variant="outline" className="text-xs">
+                    <Badge key={tech} variant="outline" className="text-xs skill-card-3d glass-morphism">
                       {tech}
                     </Badge>
                   ))}
                   {project.technologies.length > 4 && (
-                    <Badge variant="outline" className="text-xs">
+                    <Badge variant="outline" className="text-xs skill-card-3d glass-morphism">
                       +{project.technologies.length - 4} more
                     </Badge>
                   )}
@@ -101,7 +102,7 @@ const ProjectsSection = () => {
                 <div className="flex space-x-3 pt-2">
                   <Button 
                     size="sm" 
-                    className="flex-1"
+                    className="flex-1 button-3d"
                     onClick={() => window.open(project.liveLink, '_blank')}
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />
@@ -110,6 +111,7 @@ const ProjectsSection = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
+                    className="button-3d glass-morphism"
                     onClick={() => window.open(project.githubLink, '_blank')}
                   >
                     <Github className="mr-2 h-4 w-4" />
@@ -121,25 +123,25 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Other Projects */}
+        {/* Other Projects with 3D effects */}
         <div className="grid md:grid-cols-1 gap-6">
           {projects.filter(project => !project.featured).map((project) => (
             <Card 
               key={project.title} 
-              className="bg-card border border-border hover:shadow-lg transition-all duration-300 group"
+              className="project-card-3d glass-morphism border border-border/50 group"
             >
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
                   <div className="flex-1 space-y-3">
                     <div className="flex items-center space-x-3">
-                      <div className={`p-2 rounded-lg ${project.color} text-white`}>
+                      <div className={`p-2 rounded-lg ${project.color} text-white glass-morphism`}>
                         {project.icon}
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors text-3d">
                           {project.title}
                         </h3>
-                        <Badge variant="secondary" className="text-xs">
+                        <Badge variant="secondary" className="text-xs achievement-badge-3d glass-morphism">
                           {project.stats}
                         </Badge>
                       </div>
@@ -151,7 +153,7 @@ const ProjectsSection = () => {
                     
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.slice(0, 6).map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs">
+                        <Badge key={tech} variant="outline" className="text-xs skill-card-3d glass-morphism">
                           {tech}
                         </Badge>
                       ))}
@@ -162,6 +164,7 @@ const ProjectsSection = () => {
                     <Button 
                       size="sm" 
                       variant="outline"
+                      className="button-3d glass-morphism"
                       onClick={() => window.open(project.liveLink, '_blank')}
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />
@@ -170,6 +173,7 @@ const ProjectsSection = () => {
                     <Button 
                       size="sm" 
                       variant="outline"
+                      className="button-3d glass-morphism"
                       onClick={() => window.open(project.githubLink, '_blank')}
                     >
                       <Github className="mr-2 h-4 w-4" />
@@ -182,11 +186,12 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* View More Projects */}
+        {/* View More Projects with 3D effects */}
         <div className="text-center mt-12">
           <Button 
             variant="outline" 
             size="lg"
+            className="button-3d glass-morphism"
             onClick={() => window.open('https://github.com/ujjwal-srivastava', '_blank')}
           >
             <Github className="mr-2 h-5 w-5" />

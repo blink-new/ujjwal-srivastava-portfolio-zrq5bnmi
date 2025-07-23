@@ -50,53 +50,54 @@ const AchievementsSection = () => {
   ]
 
   return (
-    <section id="achievements" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="achievements" className="py-20 px-4 sm:px-6 lg:px-8 section-3d">
+      <div className="parallax-bg" />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-3d floating-3d">
             Achievements & Recognition
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-3d">
             Milestones that reflect dedication, skill, and continuous learning
           </p>
         </div>
 
-        {/* Achievement Stats */}
+        {/* Achievement Stats with 3D effects */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
-            <Card key={stat.label} className="bg-card border border-border text-center hover:shadow-lg transition-all duration-300">
+            <Card key={stat.label} className="card-3d glass-morphism border border-border/50 text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="font-semibold text-foreground mb-1">{stat.label}</div>
+                <div className="text-3xl font-bold text-primary mb-2 text-3d floating-3d">{stat.value}</div>
+                <div className="font-semibold text-foreground mb-1 text-3d">{stat.label}</div>
                 <div className="text-sm text-muted-foreground">{stat.description}</div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Achievement Cards */}
+        {/* Achievement Cards with 3D effects */}
         <div className="grid md:grid-cols-2 gap-8">
           {achievements.map((achievement, index) => (
             <Card 
               key={achievement.title} 
-              className="bg-card border border-border hover:shadow-xl transition-all duration-300 group overflow-hidden"
+              className="achievement-badge-3d glass-morphism border border-border/50 group overflow-hidden"
             >
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className={`p-3 rounded-xl ${achievement.color} text-white group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                  <div className={`p-3 rounded-xl ${achievement.color} text-white group-hover:scale-110 transition-transform duration-300 flex-shrink-0 glass-morphism`}>
                     {achievement.icon}
                   </div>
                   
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors leading-tight text-3d">
                         {achievement.title}
                       </h3>
                       <div className="flex flex-col items-end space-y-1 ml-2">
-                        <Badge variant="outline" className="text-xs whitespace-nowrap">
+                        <Badge variant="outline" className="text-xs whitespace-nowrap achievement-badge-3d glass-morphism">
                           {achievement.year}
                         </Badge>
-                        <Badge variant="secondary" className="text-xs whitespace-nowrap">
+                        <Badge variant="secondary" className="text-xs whitespace-nowrap achievement-badge-3d glass-morphism">
                           {achievement.category}
                         </Badge>
                       </div>
@@ -107,28 +108,28 @@ const AchievementsSection = () => {
                     </p>
                     
                     <div className="flex items-center justify-between">
-                      <Badge variant="outline" className="text-xs">
+                      <Badge variant="outline" className="text-xs achievement-badge-3d glass-morphism">
                         {achievement.impact}
                       </Badge>
                       
                       {achievement.title.includes('Smart India Hackathon') && (
                         <div className="flex items-center space-x-1 text-yellow-500">
                           <Trophy className="h-4 w-4" />
-                          <span className="text-xs font-medium">Winner</span>
+                          <span className="text-xs font-medium text-3d">Winner</span>
                         </div>
                       )}
                       
                       {achievement.title.includes('Finalist') && (
                         <div className="flex items-center space-x-1 text-blue-500">
                           <Award className="h-4 w-4" />
-                          <span className="text-xs font-medium">Finalist</span>
+                          <span className="text-xs font-medium text-3d">Finalist</span>
                         </div>
                       )}
                       
                       {achievement.title.includes('Runner-up') && (
                         <div className="flex items-center space-x-1 text-green-500">
                           <Target className="h-4 w-4" />
-                          <span className="text-xs font-medium">Runner-up</span>
+                          <span className="text-xs font-medium text-3d">Runner-up</span>
                         </div>
                       )}
                     </div>
@@ -139,11 +140,11 @@ const AchievementsSection = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
+        {/* Call to Action with 3D effects */}
         <div className="text-center mt-16">
-          <Card className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20">
+          <Card className="card-3d glass-morphism bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl font-bold text-foreground mb-4 text-3d">
                 Ready for New Challenges
               </h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
@@ -151,10 +152,10 @@ const AchievementsSection = () => {
                 I'm always excited to take on new challenges and contribute to innovative projects.
               </p>
               <div className="flex flex-wrap justify-center gap-2">
-                <Badge variant="secondary">Problem Solver</Badge>
-                <Badge variant="secondary">Team Leader</Badge>
-                <Badge variant="secondary">Innovation Driven</Badge>
-                <Badge variant="secondary">Competition Winner</Badge>
+                <Badge variant="secondary" className="achievement-badge-3d glass-morphism">Problem Solver</Badge>
+                <Badge variant="secondary" className="achievement-badge-3d glass-morphism">Team Leader</Badge>
+                <Badge variant="secondary" className="achievement-badge-3d glass-morphism">Innovation Driven</Badge>
+                <Badge variant="secondary" className="achievement-badge-3d glass-morphism">Competition Winner</Badge>
               </div>
             </CardContent>
           </Card>
